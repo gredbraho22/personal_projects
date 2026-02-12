@@ -1,4 +1,4 @@
-# QuantForge 🚀  
+# QuantForge
 **Modular Quantitative Trading & Portfolio Optimization Platform**
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
@@ -12,7 +12,7 @@ Demonstrates production-grade design: clean modular architecture, real data pipe
 
 Ideal for showcasing skills to quant desks, data science teams, and algorithmic trading roles at top tech & finance firms.
 
-### 🌟 Key Features
+### Key Features
 
 - Multi-asset historical price data via **yfinance** + news sentiment via **Finnhub** (free tier)
 - 20+ technical indicators (RSI, MACD, Bollinger Bands, ATR, etc.) using **pandas_ta**
