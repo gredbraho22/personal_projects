@@ -1,0 +1,15 @@
+data:
+  customer_path: "data/customer_churn.csv"
+  transaction_path: "data/transactions.csv"
+
+features:
+  rf_m_periods: 12
+  ltv_horizon: 24
+
+model:
+  target: "Churn"
+  test_size: 0.25
+  random_state: 42
+
+dashboard:
+  theme: "dark"
