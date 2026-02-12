@@ -1,0 +1,18 @@
+data:
+  url: "https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data"
+  columns: ["age", "workclass", "fnlwgt", "education", "education_num", "marital_status",
+            "occupation", "relationship", "race", "sex", "capital_gain", "capital_loss",
+            "hours_per_week", "native_country", "income"]
+
+features:
+  age_bins: [0, 25, 35, 45, 55, 65, 100]
+  age_labels: ["18-25", "26-35", "36-45", "46-55", "56-65", "65+"]
+
+model:
+  target: "income"
+  test_size: 0.25
+  random_state: 42
+  n_trials: 40
+
+dashboard:
+  theme: "dark"
