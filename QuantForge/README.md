@@ -1,4 +1,4 @@
-# QuantForge
+# Quant Forge
 **Modular Quantitative Trading & Portfolio Optimization Platform**
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
