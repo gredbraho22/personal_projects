@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+models/*.pkl
+mlruns/
+*.csv
+.DS_Store
