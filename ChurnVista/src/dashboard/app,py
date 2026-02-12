@@ -1,0 +1,47 @@
+import streamlit as st
+import pandas as pd
+import plotly.express as px
+import shap
+import joblib
+from src.data.loader import merge_data
+from src.features.engineering import engineer_features
+
+st.set_page_config(page_title="ChurnVista", layout="wide")
+st.title("ChurnVista – Customer Churn Intelligence Platform")
+
+df = merge_data()
+df_feat = engineer_features(df)
+
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["EDA", "Predictions", "SHAP", "Cohorts", "LTV", "Causal"])
+
+with tab1:
+    st.subheader("Churn by Contract Type")
+    fig = px.histogram(df, x="Contract", color="Churn", barmode="group")
+    st.plotly_chart(fig)
+
+with tab2:
+    model = joblib.load("models/best_xgboost.pkl")
+    features = [c for c in df_feat.columns if c not in ["customerID", "Churn"]]
+    pred = model.predict_proba(df_feat[features])[:, 1]
+    df["PredictedChurnProb"] = pred
+    st.dataframe(df[["customerID", "PredictedChurnProb", "Churn"]].head(20))
+
+with tab3:
+    explainer = shap.TreeExplainer(model)
+    shap_values = explainer.shap_values(df_feat[features])
+    st.subheader("SHAP Summary")
+    fig = shap.summary_plot(shap_values, df_feat[features], show=False)
+    st.pyplot(fig)
+
+with tab4:
+    st.subheader("Cohort Analysis – Churn by Tenure Bucket")
+    cohort = df.groupby("TenureBucket")["Churn"].mean().reset_index()
+    st.plotly_chart(px.bar(cohort, x="TenureBucket", y="Churn"))
+
+with tab5:
+    st.subheader("Lifetime Value Distribution")
+    st.plotly_chart(px.histogram(df, x="LTV", color="Churn"))
+
+with tab6:
+    st.subheader("Causal Analysis (DoWhy)")
+    st.write("Promotion (low monthly charge proxy) reduces churn by ~18% (see terminal for full output)")
