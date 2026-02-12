@@ -1,0 +1,17 @@
+import argparse
+import sys
+from src.dashboard.app import main as dashboard_main
+
+def main():
+    parser = argparse.ArgumentParser(description="Demand Metric")
+    parser.add_argument("--dashboard", action="store_true", help="Launch Streamlit dashboard")
+    args = parser.parse_args()
+
+    if args.dashboard:
+        dashboard_main()
+    else:
+        print("Run with --dashboard to open the UI")
+        sys.exit(0)
+
+if __name__ == "__main__":
+    main()
