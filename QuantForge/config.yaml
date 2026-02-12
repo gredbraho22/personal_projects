@@ -1,0 +1,18 @@
+data:
+  tickers: ["AAPL", "MSFT", "GOOGL", "AMZN", "NVDA", "TSLA"]
+  start_date: "2020-01-01"
+  end_date: "2026-02-01"
+
+finnhub:
+  api_key: "cXXXXXXXXXXXXXXXXXXXXXX"    
+
+features:
+  lookback: 60
+  forecast_horizon: 5
+
+backtest:
+  initial_capital: 100000
+  commission_bps: 5
+
+dashboard:
+  default_tickers: ["AAPL", "MSFT", "NVDA"]
