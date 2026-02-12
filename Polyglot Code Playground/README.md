@@ -1,6 +1,6 @@
 # Polyglot Code Playground
 
-A beautiful browser-based code playground supporting **multiple languages** via WebAssembly and browser-native runtimes.
+A browser-based code playground supporting **multiple languages** via WebAssembly and browser-native runtimes.
 
 **Languages currently supported:**
 - JavaScript / TypeScript (native)
