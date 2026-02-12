@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Data & keys
+data/
+*.csv
+*.parquet
+*. feather
+config.yaml         
+*.key
+*.env
+.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ML / experiment tracking
+mlruns/
+wandb/
+lightning_logs/
+
+# macOS
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
