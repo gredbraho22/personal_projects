@@ -1,0 +1,15 @@
+assets:
+  tickers: ["SPY", "TLT", "GLD", "DBC", "EEM", "VNQ"]
+  start_date: "2010-01-01"
+  end_date: null            # null = today
+
+backtest:
+  initial_capital: 100000
+  rebalance_freq: "M"       # M = monthly, Q = quarterly
+  transaction_cost_bps: 5
+  slippage_bps: 2
+  max_leverage: 1.5
+  target_vol: 0.10          # 10% annualized target volatility
+
+dashboard:
+  default_tickers: ["SPY", "TLT", "GLD", "DBC"]
